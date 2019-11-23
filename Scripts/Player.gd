@@ -35,7 +35,7 @@ func _process(delta):
 			
 			fall_tween.interpolate_property($Sprite, "position", 
 			Vector2(0, 0), Vector2(tween_x, tween_y),
-			.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			.75, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			
 			
 			fall_tween.start()
@@ -71,6 +71,7 @@ func _get_movedir():
 	# Move raycast to edge of the player in the movedir
 	if movedir != Vector2.ZERO:
 		ray.cast_to = movedir * tile_size / 2
+		_rotate_sprite()
 		if can_move:
 			tween_x = movedir.x * tile_size
 			tween_y = movedir.y * tile_size
@@ -79,7 +80,17 @@ func _get_movedir():
 func _on_Timer_timeout():
 	fall_timer.stop()
 	fall_tween.interpolate_property($Sprite, "position", Vector2(tween_x, tween_y), 
-	Vector2(0, 0), .5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	Vector2(0, 0), .75, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	fall_tween.start()
 	yield(fall_tween, "tween_all_completed")
 	can_move = true;
+	
+func _rotate_sprite():
+	if movedir == Vector2(-1, 0):
+		$Sprite.set_frame(3)
+	elif movedir == Vector2(1, 0):
+		$Sprite.set_frame(1)
+	elif movedir == Vector2(0, 1):
+		$Sprite.set_frame(2)
+	elif movedir == Vector2(0, -1):
+		$Sprite.set_frame(0)

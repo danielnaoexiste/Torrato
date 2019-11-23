@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ratogordo.png-8e38fe3589fbec17f4cece498a029de1.stex"
+path="res://.import/ratogordo_left.png-bc489831a97967554bdeb694fd4d4b1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ratogordo.png"
-dest_files=[ "res://.import/ratogordo.png-8e38fe3589fbec17f4cece498a029de1.stex" ]
+source_file="res://Art/ratogordo_left.png"
+dest_files=[ "res://.import/ratogordo_left.png-bc489831a97967554bdeb694fd4d4b1a.stex" ]
 
 [params]
 
