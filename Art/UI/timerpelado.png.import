@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ratogordo_left.png-bc489831a97967554bdeb694fd4d4b1a.stex"
+path="res://.import/timerpelado.png-44d9eee6d83e3c5eced52145d32a770e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ratogordo_left.png"
-dest_files=[ "res://.import/ratogordo_left.png-bc489831a97967554bdeb694fd4d4b1a.stex" ]
+source_file="res://Art/UI/timerpelado.png"
+dest_files=[ "res://.import/timerpelado.png-44d9eee6d83e3c5eced52145d32a770e.stex" ]
 
 [params]
 

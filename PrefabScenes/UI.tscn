@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PrefabScenes/UI.gd" type="Script" id=1]
+[ext_resource path="res://Art/UI/timerdone.png" type="Texture" id=2]
+[ext_resource path="res://Util/digital-7 (mono).ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+margin_bottom = 97.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 48, 48 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 28.0
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

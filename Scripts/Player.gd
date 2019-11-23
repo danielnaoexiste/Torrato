@@ -18,12 +18,15 @@ var can_move : bool = true;
 onready var ray : RayCast2D = $RayCast2D
 onready var fall_tween : Tween = $Sprite/FallTween
 onready var fall_timer : Timer = $FallTimer
+onready var cam : Camera2D = $Camera
+onready var cam_handler : Area2D = $CamHandler
 
 # Initialize snapped to grid
 func _ready():
 	position = position.snapped(Vector2(tile_size, tile_size))
 	last_position = position
 	target_position = position
+	
 	
 # Handles Movement
 func _process(delta):
@@ -36,7 +39,7 @@ func _process(delta):
 			fall_tween.interpolate_property($Sprite, "position", 
 			Vector2(0, 0), Vector2(tween_x, tween_y),
 			.75, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			
+			$Camera/ScreenShake._start(0.5, 25, 2, 1);
 			
 			fall_tween.start()
 			fall_timer.start(.5)
@@ -52,6 +55,9 @@ func _process(delta):
 		_get_movedir()
 		last_position = position
 		target_position += movedir * tile_size
+	
+	_camera_snap();
+
 
 # Gets the direction the player wants to move
 func _get_movedir():
@@ -82,6 +88,7 @@ func _on_Timer_timeout():
 	fall_tween.interpolate_property($Sprite, "position", Vector2(tween_x, tween_y), 
 	Vector2(0, 0), .75, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	fall_tween.start()
+	$Camera/ScreenShake._start(0.5, 25, 2, 1);
 	yield(fall_tween, "tween_all_completed")
 	can_move = true;
 	
@@ -94,3 +101,12 @@ func _rotate_sprite():
 		$Sprite.set_frame(2)
 	elif movedir == Vector2(0, -1):
 		$Sprite.set_frame(0)
+
+func _camera_snap():
+	for area in cam_handler.get_overlapping_areas():
+		if area.is_in_group("camera_snap"):
+			cam.limit_left = area.position.x;
+			cam.limit_right = area.position.x + 560 * area.scale.x;
+			cam.limit_top = area.position.y;
+			cam.limit_bottom = area.position.y + 360 * area.scale.y;
+
