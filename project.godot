@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Torrato"
 run/main_scene="res://Scenes/World 1.tscn"
-config/icon="res://icon.png"
+config/icon="res://Scenes/icon.png"
 
 [autoload]
 
