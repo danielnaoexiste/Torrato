@@ -391,3 +391,4 @@ position = Vector2( 203.419, 487.328 )
 [node name="NextScene" parent="." instance=ExtResource( 16 )]
 position = Vector2( 238.732, 320 )
 rotation = -3.14159
+next_scene = "res://Scenes/Menu.tscn"

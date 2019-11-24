@@ -283,7 +283,6 @@ position = Vector2( 11.2499, -64 )
 scale = Vector2( 1.82, 2.65 )
 
 [node name="BackLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = -128
 
 [node name="Sprite" parent="BackLayer" instance=ExtResource( 9 )]
