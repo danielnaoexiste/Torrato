@@ -19,7 +19,6 @@ var tween_x : int = 0
 var tween_y : int = 0
 
 var can_move : bool = true;
-var is_moving : bool = false;
 
 # Onready vars
 onready var ray : RayCast2D = $RayCast2D
@@ -36,7 +35,6 @@ func _ready():
 
 # Handles Movement
 func _process(delta):
-#	print("m", is_moving)
 	if ray.is_colliding():
 		position = last_position
 		target_position = last_position
@@ -78,9 +76,6 @@ func _get_movedir():
 	
 	if movedir != Vector2.ZERO:
 		follower_dir = movedir
-		is_moving = true
-	else:
-		is_moving = false
 	
 	# Returns the direction as integers |  (-1, 0) if left
 	movedir.x = -int(left) + int(right)

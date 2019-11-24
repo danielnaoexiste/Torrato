@@ -39,19 +39,6 @@ func _process(delta):
 			last_position = position
 			target_position += movedir * player.tile_size
 
-#	if is_following:
-#		last_position = position
-#		$AnimatedSprite.set_frame(player.index)
-#		position += player.speed * delta * player.movedir
-#		if player.position == player.target_position:
-#			last_position = position
-#			position = target_position - (movedir * player.tile_size)
-#			if position.distance_to(last_position) >= 64:
-#				position = target_position
-#		else:
-#			movedir = player.follower_dir
-#			target_position = player.follower_pos
-	
 func _check_col():
 	var bodies = get_overlapping_bodies()
 	for body in bodies:

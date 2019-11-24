@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grelha.png-05d35b719b80b99886f2d9d43aeb26b8.stex"
+path="res://.import/Menu.png-054efb9db4c5aa31203141fd631d7d24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/grelha.png"
-dest_files=[ "res://.import/grelha.png-05d35b719b80b99886f2d9d43aeb26b8.stex" ]
+source_file="res://Art/UI/Menu.png"
+dest_files=[ "res://.import/Menu.png-054efb9db4c5aa31203141fd631d7d24.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Control
 
-var level_time : int = 125
+signal time_formated
 
 # Onready vars
 onready var label : Label = $Label
@@ -11,7 +11,9 @@ var minutes : int
 
 
 func _ready():
+	var level_time = get_tree().get_root().get_child(1).level_time
 	timer.wait_time = level_time
+	print(level_time)
 	seconds = level_time
 	$Timer.start(1)
 	
@@ -21,11 +23,8 @@ func _process(delta):
 		minutes += 1;
 		seconds -= 60;
 		print("Min:", minutes, "sec", seconds)
-	
+	emit_signal("time_formated")
 	label.text = str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2)
-
-	if Input.is_action_just_pressed("ui_restart"):
-		get_tree().reload_current_scene()
 
 
 func _on_Timer_timeout():
