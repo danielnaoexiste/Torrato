@@ -20,7 +20,7 @@ shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 2 )
-energy = 0.7
+energy = 0.5
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 rotation = 3.13156
@@ -34,3 +34,7 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 145.52
 color_ramp = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

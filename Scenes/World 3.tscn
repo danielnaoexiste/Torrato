@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Art/Env/black.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://PrefabScenes/UI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://PrefabScenes/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PrefabScenes/BG.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PrefabScenes/NextScene.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -303,12 +304,10 @@ tile_data = PoolIntArray( 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65
 position = Vector2( 192, 128 )
 
 [node name="snaps" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="camera_snap" parent="snaps" instance=ExtResource( 9 )]
-visible = false
-position = Vector2( -192, -64 )
-scale = Vector2( 1.84, 1.78 )
+position = Vector2( 84.7499, 11.25 )
+scale = Vector2( 2.2, 3 )
 
 [node name="ForeLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -319,6 +318,11 @@ layer = 100
 [node name="Pause" parent="ForeLayer" instance=ExtResource( 11 )]
 
 [node name="BackLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -128
 
 [node name="Sprite" parent="BackLayer" instance=ExtResource( 12 )]
+
+[node name="NextScene" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1088, 128 )
+next_scene = "res://Scenes/World 4.tscn"

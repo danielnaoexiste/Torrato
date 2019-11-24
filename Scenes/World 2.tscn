@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Art/Env/black.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://PrefabScenes/Raton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PrefabScenes/Cheese.tscn" type="PackedScene" id=13]
 [ext_resource path="res://PrefabScenes/NextScene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://PrefabScenes/Fire.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -323,3 +324,27 @@ rotation = 3.14159
 position = Vector2( 768, 1024 )
 rotation = 1.57079
 next_scene = "res://Scenes/World 3.tscn"
+
+[node name="Fire" parent="." instance=ExtResource( 15 )]
+position = Vector2( 192, 704 )
+
+[node name="Fire2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 192, 960 )
+
+[node name="Fire3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 615, 565 )
+
+[node name="Fire4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 735.579, 565 )
+
+[node name="Fire5" parent="." instance=ExtResource( 15 )]
+position = Vector2( 675.579, 487 )
+
+[node name="Fire6" parent="." instance=ExtResource( 15 )]
+position = Vector2( 735.579, 169 )
+
+[node name="Fire7" parent="." instance=ExtResource( 15 )]
+position = Vector2( 782.389, 169 )
+
+[node name="Fire8" parent="." instance=ExtResource( 15 )]
+position = Vector2( 991.579, 815.459 )

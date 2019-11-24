@@ -274,7 +274,6 @@ layer = 100
 [node name="Pause" parent="ForeLayer" instance=ExtResource( 7 )]
 
 [node name="snaps" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="camera_snap" parent="snaps" instance=ExtResource( 8 )]
 visible = false
@@ -306,5 +305,7 @@ position = Vector2( 787.85, 640 )
 next_scene = "res://Scenes/World 2.tscn"
 
 [node name="Fire" parent="." instance=ExtResource( 14 )]
-position = Vector2( 288, 169 )
-next_scene = "res://Scenes/World 1.tscn"
+position = Vector2( 416, 608 )
+
+[node name="Fire2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 736, 416 )
