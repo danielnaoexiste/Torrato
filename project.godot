@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Torrato"
-run/main_scene="res://Scenes/World 1.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://Scenes/icon.png"
 
 [autoload]
 
 scene_changer="*res://PrefabScenes/SceneChanger.tscn"
+MusicSingleton="res://PrefabScenes/MusicSingleton.tscn"
 
 [debug]
 

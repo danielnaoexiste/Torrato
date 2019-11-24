@@ -310,12 +310,14 @@ position = Vector2( 84.7499, 11.25 )
 scale = Vector2( 2.2, 3 )
 
 [node name="ForeLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="UI" parent="ForeLayer" instance=ExtResource( 10 )]
+world = NodePath("../..")
 
 [node name="Pause" parent="ForeLayer" instance=ExtResource( 11 )]
+next_scene = "res://Scenes/Menu.tscn"
+world = NodePath("../..")
 
 [node name="BackLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true

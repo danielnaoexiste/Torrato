@@ -1,7 +1,8 @@
 extends Control
 
+export(String, FILE, "*.tscn") var next_scene
 onready var label : Label = $timerpelado/Label
-onready var level_time : int = get_tree().get_root().get_child(1).level_time
+export (NodePath) var world 
 onready var ui_label : Label = get_parent().get_node("UI").get_node("Label")
 
 onready var menu : TextureButton = $timerpelado/VBoxContainer/HBoxContainer/Menu
@@ -10,6 +11,7 @@ onready var reset : TextureButton = $timerpelado/VBoxContainer/HBoxContainer/Res
 
 func _ready():
 	connect("time_formated", get_parent().get_node("UI"), "_format_time")
+	world = get_node(world)
 	menu.grab_focus()
 
 # ignore-warning: unused_argument
@@ -33,8 +35,7 @@ func _format_time():
 	label.text = ui_label.text
 
 func _on_Menu_pressed():
-	print("menu pressed")
-	pass # Replace with function body.
+	scene_changer.change_scene(next_scene);
 
 
 func _on_Sair_pressed():

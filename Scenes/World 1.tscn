@@ -241,7 +241,6 @@ points = PoolVector2Array( 0.145386, 2.59621, 56.799, 7.06152, 62.3806, 64, 0, 6
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
-level_time = 30
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
@@ -266,14 +265,17 @@ format = 1
 tile_data = PoolIntArray( 65538, 0, 0, 65539, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65545, 0, 0, 65546, 0, 0, 65548, 0, 0, 131075, 0, 0, 131076, 0, 0, 131078, 0, 0, 131079, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196614, 0, 0, 196615, 0, 0, 196617, 0, 0, 196620, 0, 0, 262146, 0, 0, 262147, 0, 0, 262151, 0, 0, 262152, 0, 0, 262155, 0, 0, 262156, 0, 0, 327682, 0, 0, 327683, 0, 0, 327685, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 393218, 0, 0, 393221, 0, 0, 393223, 0, 0, 393224, 0, 0, 393226, 0, 0, 393228, 0, 0, 458754, 0, 0, 458756, 0, 0, 458759, 0, 0, 458762, 0, 0, 458763, 0, 0, 458765, 0, 0, 524290, 0, 0, 524292, 0, 0, 524293, 0, 0, 524295, 0, 0, 524297, 0, 0, 524299, 0, 0, 524300, 0, 0, 589828, 0, 0, 589829, 0, 0, 589831, 0, 0, 589833, 0, 0, 589836, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0 )
 
 [node name="ForeLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="UI" parent="ForeLayer" instance=ExtResource( 6 )]
+world = NodePath("../..")
 
 [node name="Pause" parent="ForeLayer" instance=ExtResource( 7 )]
+next_scene = "res://Scenes/Menu.tscn"
+world = NodePath("../..")
 
 [node name="snaps" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="camera_snap" parent="snaps" instance=ExtResource( 8 )]
 visible = false
@@ -296,9 +298,11 @@ player_path = NodePath("../Player")
 
 [node name="Cheese" parent="." instance=ExtResource( 12 )]
 position = Vector2( 173.996, 641.166 )
+world = NodePath("..")
 
 [node name="Cheese2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 765.841, 126.285 )
+world = NodePath("..")
 
 [node name="NextScene" parent="." instance=ExtResource( 13 )]
 position = Vector2( 787.85, 640 )

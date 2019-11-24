@@ -6,15 +6,16 @@ signal time_formated
 onready var label : Label = $Label
 onready var cheese_label : Label = $CheeseLabel
 onready var timer : Timer = $Timer
-onready var ui = get_tree().get_root().get_child(1)
+export(NodePath) onready var world
 
 var seconds : int 
 var minutes : int
 
 
 func _ready():
-	timer.wait_time = ui.level_time
-	seconds = ui.level_time
+	world = get_node(world)
+	timer.wait_time = world.level_time
+	seconds = world.level_time
 	$Timer.start(1)
 	cheese_label.text = "0X"
 	
@@ -26,7 +27,7 @@ func _process(delta):
 		print("Min:", minutes, "sec", seconds)
 	emit_signal("time_formated")
 	label.text = str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2)
-	cheese_label.text = str(ui.cheese) + "X"
+	cheese_label.text = str(world.cheese) + "X"
 
 func _on_Timer_timeout():
 	seconds -= 1;
