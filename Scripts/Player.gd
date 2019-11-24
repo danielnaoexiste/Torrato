@@ -19,6 +19,7 @@ var tween_x : int = 0
 var tween_y : int = 0
 
 var can_move : bool = true;
+var rat_saved : bool = false;
 
 # Onready vars
 onready var ray : RayCast2D = $RayCast2D

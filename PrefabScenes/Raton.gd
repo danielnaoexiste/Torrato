@@ -43,4 +43,5 @@ func _check_col():
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
+			body.rat_saved = true;
 			is_following = true;
