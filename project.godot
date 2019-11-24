@@ -17,7 +17,10 @@ _global_script_class_icons={
 
 config/name="Torrato"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://Scenes/icon.png"
+boot_splash/image="res://Art/Util/splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://Art/Util/icon1.png"
 
 [autoload]
 

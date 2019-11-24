@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Art/Menu/backedit.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/Menu/playSel.png" type="Texture" id=5]
 [ext_resource path="res://Art/Menu/Quit.png" type="Texture" id=6]
 [ext_resource path="res://Art/Menu/QuitSel.png" type="Texture" id=7]
+[ext_resource path="res://SFX/blip.wav" type="AudioStream" id=8]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -62,5 +63,9 @@ focus_previous = NodePath("../PlayButton")
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
+
+[node name="blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

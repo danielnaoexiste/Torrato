@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Art/Env/black.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://PrefabScenes/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PrefabScenes/BG.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PrefabScenes/NextScene.tscn" type="PackedScene" id=13]
+[ext_resource path="res://PrefabScenes/Raton.tscn" type="PackedScene" id=14]
+[ext_resource path="res://PrefabScenes/Cheese.tscn" type="PackedScene" id=15]
+[ext_resource path="res://PrefabScenes/Fire.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -278,6 +281,7 @@ points = PoolVector2Array( 0.145386, 2.59621, 56.799, 7.06152, 62.3806, 64, 0, 6
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
+level_time = 50
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
@@ -306,6 +310,7 @@ position = Vector2( 192, 128 )
 [node name="snaps" type="Node" parent="."]
 
 [node name="camera_snap" parent="snaps" instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 84.7499, 11.25 )
 scale = Vector2( 2.2, 3 )
 
@@ -320,7 +325,6 @@ next_scene = "res://Scenes/Menu.tscn"
 world = NodePath("../..")
 
 [node name="BackLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = -128
 
 [node name="Sprite" parent="BackLayer" instance=ExtResource( 12 )]
@@ -328,3 +332,33 @@ layer = -128
 [node name="NextScene" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1088, 128 )
 next_scene = "res://Scenes/World 4.tscn"
+
+[node name="Raton" parent="." instance=ExtResource( 14 )]
+position = Vector2( 452.331, 939.163 )
+player_path = NodePath("../Player")
+
+[node name="Cheese" parent="." instance=ExtResource( 15 )]
+position = Vector2( 320, 576 )
+world = NodePath("..")
+
+[node name="Cheese2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 768, 704 )
+world = NodePath("..")
+
+[node name="Fire" parent="." instance=ExtResource( 16 )]
+position = Vector2( 192, 960 )
+
+[node name="Fire2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 352, 496.18 )
+
+[node name="Fire3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 352, 240.18 )
+
+[node name="Fire4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 800, 375 )
+
+[node name="Fire5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 608, 496.18 )
+
+[node name="Fire6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1056, 620 )

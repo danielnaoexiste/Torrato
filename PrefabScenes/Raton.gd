@@ -10,6 +10,8 @@ var movedir : Vector2 = Vector2()
 var last_position : Vector2 = Vector2()
 var target_position : Vector2 = Vector2()
 
+var played : bool = false
+
 func _ready():
 	player = get_node(player_path);
 	position = position.snapped(Vector2(64, 64))
@@ -43,5 +45,8 @@ func _check_col():
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
+			if not played:
+				body.rat_sound.play()
+				played = true
 			body.rat_saved = true;
 			is_following = true;

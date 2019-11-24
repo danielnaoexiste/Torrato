@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Art/Rato/ratogordo_up.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Art/Rato/ratogordo_left.png" type="Texture" id=5]
 [ext_resource path="res://PrefabScenes/ScreenShake.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Util/grad.png" type="Texture" id=7]
+[ext_resource path="res://SFX/fogo.wav" type="AudioStream" id=8]
+[ext_resource path="res://SFX/next.wav" type="AudioStream" id=9]
+[ext_resource path="res://SFX/qjo.wav" type="AudioStream" id=10]
+[ext_resource path="res://SFX/rato.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -72,4 +76,22 @@ editor/display_folded = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CamHandler"]
 position = Vector2( 32, 32 )
 shape = SubResource( 3 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="fogo" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="next" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+volume_db = -13.0
+
+[node name="qjo" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+volume_db = -5.0
+
+[node name="rato" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 11 )
+volume_db = -13.0
 [connection signal="timeout" from="FallTimer" to="." method="_on_Timer_timeout"]

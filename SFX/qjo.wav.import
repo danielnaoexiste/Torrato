@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/qjo.wav-bbc876dde380ef3ace0715ffa3bda93f.sample"
+
+[deps]
+
+source_file="res://SFX/qjo.wav"
+dest_files=[ "res://.import/qjo.wav-bbc876dde380ef3ace0715ffa3bda93f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

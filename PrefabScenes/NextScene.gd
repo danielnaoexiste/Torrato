@@ -7,4 +7,5 @@ func _process(delta):
 	for body in bodies:
 		if body.name == "Player":
 			if body.rat_saved == true:
+				body.com_sound.play()
 				scene_changer.change_scene(next_scene);

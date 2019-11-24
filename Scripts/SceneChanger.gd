@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal scene_changed()
 
+
 onready var anim_player : AnimationPlayer = $AnimationPlayer
 onready var black : ColorRect = $Control/ColorRect
 

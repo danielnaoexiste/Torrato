@@ -28,6 +28,12 @@ onready var fall_timer : Timer = $FallTimer
 onready var cam : Camera2D = $Camera
 onready var cam_handler : Area2D = $CamHandler
 
+onready var fire_sound : AudioStreamPlayer = $SFX/fogo
+onready var rat_sound : AudioStreamPlayer = $SFX/rato
+onready var qjo_sound : AudioStreamPlayer = $SFX/qjo
+onready var com_sound : AudioStreamPlayer = $SFX/next
+#onready var fire_sound : AudioStreamPlayer = $SFX/fogo
+
 # Initialize snapped to grid
 func _ready():
 	position = position.snapped(Vector2(tile_size, tile_size))
