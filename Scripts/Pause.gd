@@ -33,6 +33,7 @@ func _format_time():
 	label.text = ui_label.text
 
 func _on_Menu_pressed():
+	print("menu pressed")
 	pass # Replace with function body.
 
 

@@ -44,6 +44,7 @@ shape = SubResource( 2 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.6, 0.6 )
 
 [node name="ScreenShake" parent="Camera" instance=ExtResource( 6 )]
 
