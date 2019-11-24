@@ -1,6 +1,8 @@
 extends Area2D
 
 var is_following : bool = false;
+var first_time : bool = true;
+
 export(NodePath) onready var player_path : NodePath
 var player : KinematicBody2D
 
@@ -16,17 +18,39 @@ func _ready():
 
 func _process(delta):
 	_check_col()
+	
 	if is_following:
-		print("Seguindo")
-		target_position = player.last_position
-		last_position = position
-		position += player.speed * delta * player.movedir
-		if player.position != player.target_position:
-			last_position = position
-			position += target_position
+		if first_time:
+			position = player.follower_pos
+			target_position += movedir * player.tile_size
+			first_time = not first_time
 		
-		if position.distance_to(last_position) >= 64:
-			position = target_position
+		
+		if player.position != player.target_position:
+			if player.can_move:
+				position += player.speed * movedir * delta
+			
+			$AnimatedSprite.set_frame(player.last_index)
+			if position.distance_to(last_position) >= player.tile_size:
+				position = player.follower_pos
+			
+		if position == target_position:
+			movedir = player.follower_dir
+			last_position = position
+			target_position += movedir * player.tile_size
+
+#	if is_following:
+#		last_position = position
+#		$AnimatedSprite.set_frame(player.index)
+#		position += player.speed * delta * player.movedir
+#		if player.position == player.target_position:
+#			last_position = position
+#			position = target_position - (movedir * player.tile_size)
+#			if position.distance_to(last_position) >= 64:
+#				position = target_position
+#		else:
+#			movedir = player.follower_dir
+#			target_position = player.follower_pos
 	
 func _check_col():
 	var bodies = get_overlapping_bodies()
