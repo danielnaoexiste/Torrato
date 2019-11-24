@@ -260,6 +260,7 @@ points = PoolVector2Array( 0.145386, 2.59621, 56.799, 7.06152, 62.3806, 64, 0, 6
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
+level_time = 45
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
