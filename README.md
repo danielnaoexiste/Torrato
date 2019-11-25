@@ -1,4 +1,4 @@
-# torrato
+# Torrato
 Game made for Devujam Final Showdown
 
 # License
